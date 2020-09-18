@@ -5,4 +5,5 @@ RUN apt-get update &&\
     apt-get install -y libpurple-dev zlib1g-dev libxml2-dev openssh-server &&\
     apt-get clean &&\
     rm -rf /var/lib/apt/lists/*
+RUN mkdir /var/run/sshd
 CMD ["/usr/sbin/sshd", "-D"]
